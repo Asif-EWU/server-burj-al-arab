@@ -14,7 +14,6 @@ const admin = require("firebase-admin");
 const serviceAccount = require("./configs/react-burj-al-arab-website-firebase-adminsdk.json");
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
-  
 }); 
 
 
@@ -66,7 +65,7 @@ client.connect(err => {
                         res.status(401).send('un-authorized access');
                 })
                 .catch((error) => {
-                    // Handle error
+                    res.status(401).send('un-authorized access');
                 });
         }
         else {
